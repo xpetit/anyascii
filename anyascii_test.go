@@ -27,6 +27,8 @@ func TestTransliterate(t *testing.T) {
 
 	check("René François Lacôte", "Rene Francois Lacote")
 	check("Blöße", "Blosse")
+	check("£", "GBP")
+	check("€", "EUR")
 	check("Trần Hưng Đạo", "Tran Hung Dao")
 	check("Nærøy", "Naeroy")
 	check("Φειδιππίδης", "Feidippidis")
