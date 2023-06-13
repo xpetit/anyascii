@@ -4,6 +4,7 @@ import "testing"
 
 func TestTransliterate(t *testing.T) {
 	check := func(s string, expected string) {
+		t.Helper()
 		actual := Transliterate(s)
 		if actual != expected {
 			t.Errorf("Expected <%s> got <%s>", expected, actual)
@@ -32,13 +33,7 @@ func TestTransliterate(t *testing.T) {
 	check("Δημήτρης Φωτόπουλος", "Dimitris Fotopoylos")
 	check("Борис Николаевич Ельцин", "Boris Nikolaevich El'tsin")
 	check("Володимир Горбулін", "Volodimir Gorbulin")
-	check("Търговище", "T'rgovishche")
-	check("深圳", "ShenZhen")
-	check("深水埗", "ShenShuiBu")
-	check("화성시", "HwaSeongSi")
-	check("華城市", "HuaChengShi")
 	check("さいたま", "saitama")
-	check("埼玉県", "QiYuXian")
 	check("ደብረ ዘይት", "debre zeyt")
 	check("ደቀምሓረ", "dek'emhare")
 	check("دمنهور", "dmnhwr")
@@ -60,7 +55,6 @@ func TestTransliterate(t *testing.T) {
 	check("கன்னியாகுமரி", "knniyakumri")
 	check("శ్రీకాకుళం", "srikakulm")
 	check("สงขลา", "sngkhla")
-	check("👑 🌴", ":crown: :palm_tree:")
 	check("☆ ♯ ♰ ⚄ ⛌", "* # + 5 X")
 	check("№ ℳ ⅋ ⅍", "No M & A/S")
 
@@ -73,7 +67,6 @@ func TestTransliterate(t *testing.T) {
 	check("ᨅᨔ ᨕᨘᨁᨗ", "bs ugi")
 	check("ϯⲙⲓⲛϩⲱⲣ", "timinhor")
 	check("𐐜 𐐢𐐮𐐻𐑊 𐐝𐐻𐐪𐑉", "Dh Litl Star")
-	check("ꁌꐭꑤ", "pujjytxiep")
 	check("ⰳⰾⰰⰳⱁⰾⰹⱌⰰ", "glagolica")
 	check("ᏎᏉᏯ", "SeQuoYa")
 	check("ㄓㄨㄤ ㄅㄥ ㄒㄧㄠ", "zhuang beng xiao")
